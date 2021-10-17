@@ -1,5 +1,5 @@
 // React Navigation Libaries
-import { createAppContainer } from "react-navigation";
+import { createAppContainer, withOrientation } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 // Screen Imports
@@ -19,6 +19,12 @@ const screens = {
 // Create screen navigator
 const navigator = createStackNavigator(screens, {
   initialRouteName: "Login",
+  defaultNavigationOptions: {
+    cardStyle: {
+      backgroundColor: "white",
+    },
+    headerShown: false,
+  },
 });
 
 export default createAppContainer(navigator);
